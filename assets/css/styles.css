@@ -1,10 +1,10 @@
 :root {
-    --color-primary: #ff8906;
-    --color-secondary: #f25f4c;
-    --color-tertiary: #e53170;
+    --color-primary: #7f5af0;
+    --color-secondary: #72757e;
+    --color-tertiary: #2cb67d;
     --white: #fffffe;
     --black: #000000;
-    --cinder: #0f0e17;
+    --cinder: #16161a;
     --grey: #a7a9be;
   
     --background: var(--cinder);
@@ -15,7 +15,9 @@
     --font-color-heading: var(--white);
     --font-color-paragraph: var(--grey);
   
-    --font-size-small: calc(var(--font-size-base) * 1.5);
+    --font-size-small: 1.5rem;
+
+    --padding-base: 10px;
   
   }
   
@@ -23,12 +25,15 @@
     box-sizing: border-box;
   }
   
+html {
+  color: var(--font-color-paragraph);
+  background-color: var(--background);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+}
+
   body {
-    background-color: var(--background);
-    font-family: var(--font-family);
-    font-size: var(--font-size-small);
-    padding: 0;
-    margin: 0;
+    font-size:  var(--font-size-small);
   }
   
   h1, h2, h3 {
@@ -41,4 +46,43 @@
   
   .NavigationBar {
     background-color: var(--color-primary);
+  }
+
+  .NavigationBar-brandContainer,
+  .NavigationBar-menuContainer {
+    padding-left:  var(--padding-base);
+    padding-right: var(--padding-base);
+  }
+
+  .NavigationBar-brandContainer {
+    border-bottom: 1px solid var(--grey);
+  }
+
+  .NavigationBar-brand {
+    color: var(--white);
+    display: block;
+    padding: 1.5rem 0;
+    text-decoration:none;
+    text-transform: uppercase;
+    font-size: 1.9rem;
+    font-weight: bold;
+  }
+
+  .NavigationBar-menuList {
+    display: block;
+    padding: 1.5rem 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  .NavigationBar-menuList > a{
+    text-decoration:none;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+
+
+  .NavigationBar-brand:hover {
+    color: var(--color-secondary);
   }
