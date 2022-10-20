@@ -21,19 +21,15 @@
   
   }
   
-  * {
-    box-sizing: border-box;
+  html {
+    background-color: var(--background);
+    color: var(--font-color-paragraph);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
   }
   
-html {
-  color: var(--font-color-paragraph);
-  background-color: var(--background);
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-}
-
   body {
-    font-size:  var(--font-size-small);
+    font-size: var(--font-size-small);
   }
   
   h1, h2, h3 {
@@ -47,42 +43,75 @@ html {
   .NavigationBar {
     background-color: var(--color-primary);
   }
-
+  
   .NavigationBar-brandContainer,
   .NavigationBar-menuContainer {
-    padding-left:  var(--padding-base);
+    padding-left: var(--padding-base);
     padding-right: var(--padding-base);
   }
 
-  .NavigationBar-brandContainer {
-    border-bottom: 1px solid var(--grey);
+  .NavigationBar-menuContainer--hide {
+    display: none;
   }
 
+  .NavigationBar-menuContainer--show {
+    display:block
+  }
+  
+  .NavigationBar-brandContainer {
+    border-bottom: .1rem solid var(--grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .NavigationBar-hamburgerContainer {
+    border: .1px solid var(--color-tertiary);
+    padding: 0.9rem 1rem 0.5rem;
+    border-radius: 0.4rem;
+    width: 4.5rem;
+
+  }
+
+  .NavigationBar-hamburgerContainer:hover {
+    background-color: var(--color-tertiary);
+    cursor: pointer;
+  }
+
+  .NavigationBar-hamburgerLine {
+    background-color:  var(--white);
+    height: 0.3rem;
+    margin-bottom: 0.4rem;
+    border-radius:  0.4rem;
+  }
+  
   .NavigationBar-brand {
     color: var(--white);
     display: block;
-    padding: 1.5rem 0;
-    text-decoration:none;
-    text-transform: uppercase;
     font-size: 1.9rem;
     font-weight: bold;
-  }
-
-  .NavigationBar-menuList {
-    display: block;
     padding: 1.5rem 0;
-    font-size: 1.3rem;
-    font-weight: bold;
-  }
-
-  .NavigationBar-menuList > a{
-    text-decoration:none;
+    text-decoration: none;
     text-transform: uppercase;
-    color: var(--white);
   }
-
-
-
-  .NavigationBar-brand:hover {
+  
+  .NavigationBar-brand:hover,
+  .NavigationBar-menuList > a:hover {
     color: var(--color-secondary);
+  }
+  
+  .NavigationBar-menu {
+    padding: 1rem 0;
+  }
+  
+  .NavigationBar-menuList {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem 0;
+  }
+  
+  .NavigationBar-menuList > a {
+    color: var(--white);
+    display: block;
+    text-decoration: none;
   }
