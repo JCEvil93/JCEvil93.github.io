@@ -19,6 +19,15 @@
 
     --padding-base: 10px;
   
+    --grid-breakpoints-xs: 0;
+    --grid-breakpoints-sm: 576px;
+    --grid-breakpoints-md: 768px;
+    --grid-breakpoints-lg: 992px;
+    --grid-breakpoints-xl: 1200px;
+    --grid-breakpoints-xxl: 1400px;
+  
+    --max-width-container: 1170px;
+  
   }
   
   html {
@@ -34,6 +43,7 @@
   
   h1, h2, h3 {
     color: var(--font-color-heading);
+    font-family: var(--font-family-headings);
   }
   
   p {
@@ -42,6 +52,8 @@
   
   .NavigationBar {
     background-color: var(--color-primary);
+    font-family: var(--font-family-headings);
+    font-weight: bold;
   }
   
   .NavigationBar-brandContainer,
@@ -145,20 +157,20 @@
     display: block;
     text-decoration: none;
   }
-
+  
   @media (min-width: 768px) {
     .NavigationBar-container {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 2rem 0;
+      justify-content: space-between;
+      padding: 1.5rem 0;
     }
   
     .NavigationBar-brandContainer {
       border-bottom: 0;
     }
-
-    .NavigationBar-brand{
+  
+    .NavigationBar-brand {
       font-size: 3rem;
     }
   
@@ -176,9 +188,10 @@
       gap: 3rem;
     }
   }
+  
   @media (min-width: 1200px) {
     .NavigationBar-container {
       margin: 0 auto;
-      width: 1170px;
+      max-width: var(--max-width-container);
     }
   }
