@@ -1,0 +1,197 @@
+:root {
+    --color-primary: #7f5af0;
+    --color-secondary: #72757e;
+    --color-tertiary: #2cb67d;
+    --white: #fffffe;
+    --black: #000000;
+    --cinder: #16161a;
+    --grey: #a7a9be;
+  
+    --background: var(--cinder);
+  
+    --font-size-base: 10px;
+    --font-family: "Lato","Helvetica Neue", Helvetica,Arial,sans-serif;
+  
+    --font-color-heading: var(--white);
+    --font-color-paragraph: var(--grey);
+  
+    --font-size-small: 1.5rem;
+
+    --padding-base: 10px;
+  
+    --grid-breakpoints-xs: 0;
+    --grid-breakpoints-sm: 576px;
+    --grid-breakpoints-md: 768px;
+    --grid-breakpoints-lg: 992px;
+    --grid-breakpoints-xl: 1200px;
+    --grid-breakpoints-xxl: 1400px;
+  
+    --max-width-container: 1170px;
+  
+  }
+  
+  html {
+    background-color: var(--background);
+    color: var(--font-color-paragraph);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+  }
+  
+  body {
+    font-size: var(--font-size-small);
+  }
+  
+  h1, h2, h3 {
+    color: var(--font-color-heading);
+    font-family: var(--font-family-headings);
+  }
+  
+  p {
+    color: var(--font-color-paragraph);
+  }
+  
+  .NavigationBar {
+    background-color: var(--color-primary);
+    font-family: var(--font-family-headings);
+    font-weight: bold;
+  }
+  
+  .NavigationBar-brandContainer,
+  .NavigationBar-menuContainer {
+    padding-left: var(--padding-base);
+    padding-right: var(--padding-base);
+  }
+  
+  .NavigationBar-brandContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.1rem solid var(--grey);
+  }
+  
+  .NavigationBar-menuContainer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .1s cubic-bezier(.4, 0, 1, 1);
+  }
+  
+  .NavigationBar-menuContainer--show {
+    max-height: 15rem;
+    transition: all .6s cubic-bezier(.4, 0, 1, 1);
+  }
+  
+  .NavigationBar-brand {
+    color: var(--white);
+    display: block;
+    font-size: 1.9rem;
+    font-weight: bold;
+    padding: 1.5rem 0;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .NavigationBar-brand:hover,
+  .NavigationBar-menuList > a:hover {
+    color: var(--color-secondary);
+  }
+  
+  .NavigationBar-hamburgerContainer {
+    border: 0.1rem solid var(--color-tertiary);
+    border-radius: 0.4rem;
+    padding: 0.9rem 1rem;
+    width: 4.5rem;
+  }
+  
+  .NavigationBar-hamburgerContainer:hover {
+    background-color: var(--color-tertiary);
+    cursor: pointer;
+  }
+  
+  .NavigationBar-hamburgerContainer--activate {
+    background-color: var(--color-tertiary);
+  }
+  
+  .NavigationBar-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  
+  
+  .NavigationBar-hamburgerLine {
+    background-color: var(--white);
+    border-radius: 0.4rem;
+    height: 0.3rem;
+    transition: all 0.2s;
+    transform-origin: left;
+  }
+  
+  .NavigationBar-hamburgerContainer--activate .NavigationBar-hamburger {
+    transform: translateX(0.4rem);
+  }
+  
+  .NavigationBar-hamburgerContainer--activate .NavigationBar-hamburgerLine:first-child {
+    transform: rotate(45deg);
+  }
+  
+  .NavigationBar-hamburgerContainer--activate .NavigationBar-hamburgerLine:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .NavigationBar-hamburgerContainer--activate .NavigationBar-hamburgerLine:last-child {
+    transform: rotate(-45deg);
+  }
+  
+  .NavigationBar-menu {
+    padding: 1rem 0;
+  }
+  
+  .NavigationBar-menuList {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem 0;
+  }
+  
+  .NavigationBar-menuList > a {
+    color: var(--white);
+    display: block;
+    text-decoration: none;
+  }
+  
+  @media (min-width: 768px) {
+    .NavigationBar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+    }
+  
+    .NavigationBar-brandContainer {
+      border-bottom: 0;
+    }
+  
+    .NavigationBar-brand {
+      font-size: 3rem;
+    }
+  
+    .NavigationBar-hamburgerContainer {
+      display: none;
+    }
+  
+    .NavigationBar-menuContainer {
+      max-height: none;
+      overflow: visible;
+    }
+  
+    .NavigationBar-menu {
+      display: flex;
+      gap: 3rem;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .NavigationBar-container {
+      margin: 0 auto;
+      max-width: var(--max-width-container);
+    }
+  }
