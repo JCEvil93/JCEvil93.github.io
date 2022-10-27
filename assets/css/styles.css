@@ -11,6 +11,8 @@
   
     --font-size-base: 10px;
     --font-family: "Lato","Helvetica Neue", Helvetica,Arial,sans-serif;
+
+    --font-family-fontawesome: "Font Awesome 5 Free", "Helvetica Neue", Helvetica, Arial, sans-serif;
   
     --font-color-heading: var(--white);
     --font-color-paragraph: var(--grey);
@@ -156,6 +158,40 @@
     color: var(--white);
     display: block;
     text-decoration: none;
+  }
+
+  .StarComponent {
+   margin: 2.5rem auto 3rem;
+   padding: 0;
+   max-width: 25rem;
+   border: 0;
+   border-top: solid 0.5rem;
+   text-align: center;
+   overflow: visible;
+  }
+
+  .StarComponent, .StartComponent::after {
+    color: var(--white);
+  }
+
+  .StarComponent::after{
+    position: relative;
+    top: -0.8em;
+    font-family: var(--font-family-fontawesome);
+    content: "\f005";
+    display: inline-block;
+    padding: 0 0.25rem;
+    font-size: 2em;
+    background-color: var(--cinder);
+  }
+
+  .StarComponent--dark {
+    border-color:  var(--color-primary);
+  }
+
+  .StarComponent--dark::after {
+    color: var(--color-primary);
+    background-color:  var(--white);
   }
   
   @media (min-width: 768px) {
