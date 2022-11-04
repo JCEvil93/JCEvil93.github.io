@@ -1,4 +1,3 @@
-<span class="TitleComponent {% if include.modifier%}TitleComponent--{{include.modifier}}{% endif %} 
-{% if include.modifier%}TitleComponent--{{include.size}}{% endif %}">
+<span class="TitleComponent {% if include.modifier %}TitleComponent--{{ include.modifier }}{% endif %} {% if include.size %}TitleComponent--{{ include.size }}{% endif %}">
     {{include.title}}
 </span>

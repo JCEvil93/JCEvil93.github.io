@@ -33,7 +33,7 @@
     --max-width-container: 1170px;
   
   }
-  
+
   html {
     background-color: var(--background);
     color: var(--font-color-paragraph);
@@ -60,7 +60,7 @@
     right: 0;
     left: 0;
     background-color: var(--cinder);
-    font-family:  var(--font-family-headings);
+    font-family: var(--font-family-headings);
     font-weight: bold;
     transform: translate3d(0, 0, 0);
     z-index: var(--z-index-base);
@@ -102,14 +102,14 @@
   
   .NavigationBar-brand:hover,
   .NavigationBar-menuList > a:hover {
-    color: var(--color-primary);
+    color: var(--color-secondary);
   }
   
   .NavigationBar-hamburgerContainer {
     border: 0.1rem solid var(--color-primary);
     border-radius: 0.4rem;
     padding: 0.5rem;
-    width: 3.3rem;
+    width: 3.2rem;
   }
   
   .NavigationBar-hamburgerContainer:hover {
@@ -167,41 +167,41 @@
     display: block;
     text-decoration: none;
   }
-
+  
   .StarComponent {
-   margin: 2.5rem auto 3rem;
-   padding: 0;
-   max-width: 25rem;
-   border: 0;
-   border-top: solid 0.5rem;
-   text-align: center;
-   overflow: visible;
+    border: 0;
+    border-top: solid .5rem;
+    margin: 2.5rem auto 3rem;
+    max-width: 25rem;
+    overflow: visible;
+    padding: 0;
+    text-align: center;
   }
-
-  .StarComponent, .StartComponent::after {
+  
+  .StarComponent, .StarComponent::after {
     color: var(--white);
   }
-
-  .StarComponent::after{
+  
+  .StarComponent::after {
     position: relative;
-    top: -0.8em;
-    font-family: var(--font-family-fontawesome);
+    top: -.8em;
+    background-color: var(--color-secondary );
     content: "\f005";
     display: inline-block;
-    padding: 0 0.25rem;
+    font-family: var(--font-family-fontawesome);
     font-size: 2em;
-    background-color: var(--color-secondary);
+    padding: 0 .25rem;
   }
-
+  
   .StarComponent--dark {
-    border-color:  var(--color-primary);
+    border-color: var(--color-primary);
   }
-
+  
   .StarComponent--dark::after {
     color: var(--color-primary);
-    background-color:  var(--cinder);
+    background-color: var(--cinder);
   }
-
+  
   .TitleComponent {
     color: var(--white);
     display: block;
@@ -210,19 +210,45 @@
     font-size: 4.5rem;
     text-transform: uppercase;
   }
-
-  .TitleComponent--dark{
+  
+  .TitleComponent--dark {
     color: var(--color-primary);
   }
-
+  
   .TitleComponent--large {
     font-size: 3rem;
   }
   
+  .Header {
+    background-color: var(--color-secondary);
+    padding: 10rem 0 5rem;
+    text-align: center;
+  }
+  
+  .Header-container {
+    padding: 0 var(--padding-base);
+  }
+  
+  .Header-imageContainer {
+    margin: 0 auto 2rem;
+    max-width: 25rem;
+  }
+  
+  .Header-image {
+    border-radius: 50%;
+  }
+  
+  .Header-skills {
+    color: var(--white);
+    font-size: 1.8rem;
+  }
+  
   @media (min-width: 768px) {
+  
     .NavigationBar-menuContainer--show {
       box-shadow: none;
     }
+  
     .NavigationBar-container {
       display: flex;
       align-items: center;
@@ -251,16 +277,24 @@
       display: flex;
       gap: 3rem;
     }
-
+  
     .TitleComponent--large {
       font-size: 7.1rem;
     }
-
+  
+    .Header {
+      padding: 20rem 0 10rem;
+    }
+  
+    .Header-skills {
+      font-size: 2.6rem;
+    }
   }
   
   @media (min-width: 1200px) {
-    .NavigationBar-container {
+    .NavigationBar-container,
+    .Header-container{
       margin: 0 auto;
       max-width: var(--max-width-container);
     }
-  }
+  }  
